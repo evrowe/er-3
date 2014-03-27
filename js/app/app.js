@@ -32,6 +32,26 @@ App = Ember.Application.create();
 
 App.Router.map(function() {
   // put your routes here
+  this.route("about");
+  this.resource("caseStudies", {path: "/case-studies"}, function() {
+    this.route("study", {path: "/case-studies/study:id" });
+  });
+  this.route("contact");
+  this.resource("journal", function() {
+    this.route("entry");
+  });
+});
+
+App.JournalRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find("journal");
+  }
+});
+
+App.EntryRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find("entry", params.entry_id);
+  }
 });
 
 /**
