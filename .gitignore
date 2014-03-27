@@ -20,6 +20,7 @@ Icon
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.swp
 
 # JSDoc #
 #########
