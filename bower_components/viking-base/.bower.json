@@ -1,6 +1,6 @@
 {
   "name": "viking-base",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "ignore": [
     ".gitignore",
     "bower.json",
@@ -16,14 +16,14 @@
     "respond": "1.4.1"
   },
   "homepage": "https://github.com/jneurock/viking-base",
-  "_release": "1.1.0",
+  "_release": "2.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "v1.1.0",
-    "commit": "4941bf7a674653b3cda43e38026424fb14bab8f8"
+    "tag": "v2.0.0",
+    "commit": "91bed7980e7e1867e58d9e0380da6d0e43346759"
   },
   "_source": "git://github.com/jneurock/viking-base.git",
-  "_target": "1.1.0",
+  "_target": "~2.0.0",
   "_originalSource": "viking-base",
   "_direct": true
 }
