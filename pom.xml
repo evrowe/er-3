@@ -17,7 +17,7 @@
   <properties>
     <ant_clean>clean</ant_clean>
     <ant_target>text</ant_target>
-    <jarPhase>package</jarPhase>
+    <jarPhase>never</jarPhase>
     <skipTests>true</skipTests>
   </properties>
 
@@ -57,6 +57,14 @@
       <properties>
         <ant_clean>noclean</ant_clean>
         <ant_target>debughbs</ant_target>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>debugjs</id>
+      <properties>
+        <ant_clean>noclean</ant_clean>
+        <ant_target>debugjs</ant_target>
       </properties>
     </profile>
   </profiles>
