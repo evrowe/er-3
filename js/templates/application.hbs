@@ -1,6 +1,6 @@
-<header class="row">
-  <nav class="large-12 columns">
-    {{#link-to 'caseStudies'}}case studies{{/link-to}}
+<header>
+  <nav class="row">
+    {{#link-to 'work'}}work{{/link-to}}
     {{#link-to 'journal'}}journal{{/link-to}}
     {{#link-to 'index'}}HOME{{/link-to}}
     {{#link-to 'about'}}about{{/link-to}}
@@ -8,14 +8,14 @@
   </nav>
 </header>
 
-<section class="row">
+<section class="row primary">
   <div class="large-12 columns">
     {{outlet}} 
   </div>
 </section>
 
-<footer class="row">
-  <nav class="large-12 columns">
+<footer> 
+  <div class="row">
     &copy;2014 Evan Rowe. Built on <a href="http://www.emberjs.com" target="_blank">Ember.js</a> and constructed mercilessly from <a href="https://github.com/jneurock/viking-base">Viking Base</a>.
-  </nav>
+  </div>
 </footer>

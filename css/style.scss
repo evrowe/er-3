@@ -9,28 +9,64 @@
 $orange: #faa73f;
 $ltorange: #fecd67;
 
+// global/shared styles
+a {
+  color: $orange;
+  transition: color .3s;
+  &:hover {
+    color: #000;
+  }
+}
+
+// application layout
+body {
+  background: #f0f0f0 url(img/bg-texture.png) repeat;
+  position: relative;
+  color: #333; 
+}
 
 header {
+  width: 100%;
   padding: 10px 0;
-  margin: 0 0 10px;
+  margin: 0 0 15px;
   background: rgba(255,255,255,.9);
-  box-shadow: 0px 5px 5px rgba(0,0,0,.3)  
+  box-shadow: 0px 5px 5px rgba(0,0,0,.1); 
+
+  .fixed-nav & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
 
   nav {
     max-width: 62.5rem;
     margin: 0 auto;
 
-    li {
+    a {
       width: 20%;
-
-      a {
-        display: block;
-        text-align: center;
-      }
-
+      float: left;
+      text-align: center;
     }
 
   }
 
 }
 
+footer {
+  padding: 12px 0;
+  margin: 25px auto 0;
+  position: relative;
+  border-top: 1px solid #111;
+  color: #ccc;
+  font-size: 12px;
+  background: #333 url(img/bg-footer.png) repeat;
+  &:before {
+    content: "";
+    border-top: 1px solid #777;
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+  }
+}

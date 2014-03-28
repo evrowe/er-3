@@ -16,7 +16,7 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     data = data || {};
     var buffer = "", stack1, stack2, hashTypes, hashContexts, options, self = this, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
     function program1(depth0, data) {
-        data.buffer.push("case studies");
+        data.buffer.push("work");
     }
     function program3(depth0, data) {
         data.buffer.push("journal");
@@ -30,11 +30,11 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     function program9(depth0, data) {
         data.buffer.push("contact");
     }
-    data.buffer.push("<header class=\"row\">\n  <nav class=\"large-12 columns\">\n    ");
+    data.buffer.push("<header>\n  <nav class=\"row\">\n    ");
     hashTypes = {};
     hashContexts = {};
     options = {hash:{}, inverse:self.noop, fn:self.program(1, program1, data), contexts:[depth0], types:["STRING"], hashContexts:hashContexts, hashTypes:hashTypes, data:data};
-    stack2 = ((stack1 = helpers["link-to"] || (depth0 && depth0["link-to"])), stack1 ? stack1.call(depth0, "caseStudies", options) : helperMissing.call(depth0, "link-to", "caseStudies", options));
+    stack2 = ((stack1 = helpers["link-to"] || (depth0 && depth0["link-to"])), stack1 ? stack1.call(depth0, "work", options) : helperMissing.call(depth0, "link-to", "work", options));
     if (stack2 || stack2 === 0) {
         data.buffer.push(stack2);
     }
@@ -70,11 +70,11 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     if (stack2 || stack2 === 0) {
         data.buffer.push(stack2);
     }
-    data.buffer.push("\n  </nav>\n</header>\n\n<section class=\"row\">\n  <div class=\"large-12 columns\">\n    ");
+    data.buffer.push("\n  </nav>\n</header>\n\n<section class=\"row primary\">\n  <div class=\"large-12 columns\">\n    ");
     hashTypes = {};
     hashContexts = {};
     data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-    data.buffer.push(" \n  </div>\n</section>\n\n<footer class=\"row\">\n  <nav class=\"large-12 columns\">\n    &copy;2014 Evan Rowe. Built on <a href=\"http://www.emberjs.com\" target=\"_blank\">Ember.js</a> and constructed mercilessly from <a href=\"https://github.com/jneurock/viking-base\">Viking Base</a>.\n  </nav>\n</footer>\n");
+    data.buffer.push(" \n  </div>\n</section>\n\n<footer> \n  <div class=\"row\">\n    &copy;2014 Evan Rowe. Built on <a href=\"http://www.emberjs.com\" target=\"_blank\">Ember.js</a> and constructed mercilessly from <a href=\"https://github.com/jneurock/viking-base\">Viking Base</a>.\n  </div>\n</footer>\n");
     return buffer;
 }
 );
