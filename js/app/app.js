@@ -35,41 +35,55 @@ App.Router.map(function() {
   // put your routes here
   this.route("about");
   this.resource("work", function() {
-    this.route("item", {path: "/work/item:id" });
+    this.route("item", {path: "/work/:item_id" });
   });
   this.route("contact");
   this.resource("journal", function() {
-    this.route("entry");
+    this.route("entry", {path: "/:entry_id"});
   });
-});
-
-
-App.JournalRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find("journal");
-  }
-});
-
-
-App.EntryRoute = Ember.Route.extend({
-  model: function(params) {
-    return this.store.find("entry", params.entry_id);
-  }
 });
 
 
 /**
- * An Ember route for the application itself
+ * An Ember route for the journal entries list
  *
  * @memberof App
  * @constructor
  * @extends external:Ember.Route
  */
-App.ApplicationRoute = Ember.Route.extend({
+App.JournalRoute = Ember.Route.extend({
   model: function() {
-    return ['red', 'yellow', 'blue'];
+    return Ember.$.getJSON('js/entries.json');
   }
 });
+
+
+/**
+ * An Ember route for a single journal entry
+ *
+ * @memberof App
+ * @constructor
+ * @extends external:Ember.Route
+ */
+App.EntryRoute = Ember.Route.extend({
+  model: function(params) {
+    var entryList = Ember.$.getJSON('js/entries.json');
+    return entryList.find("entry", params.entry_id);
+  }
+});
+
+
+
+/**
+ * An Ember model for journal entries
+ *
+ * @memberof App
+ * @constructor
+ * @extends external:DS.Model
+ */
+/*App.Entry = DS.Model.extend({
+
+});*/
 
 
 /* Fixed nav on scroll (lives outside context of Ember app) */
