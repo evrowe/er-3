@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <!-- Add groupId and artifactId -->
-  <groupId>com.mycompany.project_name_here</groupId>
-  <artifactId>project_name_here</artifactId>
+  <groupId>com.evan-rowe.ermkiii</groupId>
+  <artifactId>ER-MKIII</artifactId>
 
-  <version>0.0.1</version>
+  <version>0.0.4</version>
 
   <!-- Add name -->
-  <name>Project Name Here</name>
+  <name>ER.com MKIII</name>
 
   <packaging>pom</packaging>
 

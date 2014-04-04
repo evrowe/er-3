@@ -8,7 +8,7 @@ The package exists to accomplish a few main goals:
 
 Currently, the package consists of:
 
-* Ember 1.4
+* Ember 1.5
 * Handlebars 1.1.2
 * Foundation 5.2.1
 * HTML5 Boilerplate Ant Build Script
@@ -93,7 +93,7 @@ or
 
 Note that Ant requires no space between the -D flag and the following property where as Maven does allow for a space.
 
-If you really don't want to ever Jar the contents of your project, you can edit the POM and set <jarPhase>never</jarPhase> instead of the default which is "package".
+If you really don't want to ever Jar the contents of your project, you can edit the POM and set &lt;jarPhase&gt;never&lt;/jarPhase&gt; instead of the default which is "package".
 
 ## Customizing the build
 It's possible to customize your build by adding your own build.xml file. In your build file you would include the base build file found at bower_components/viking-base/build-custom/build.xml. You can add new targets, override existing targets, add new properties or override existing properties. You can then tell Ant to use your build file or modify the POM so Maven will use it.
