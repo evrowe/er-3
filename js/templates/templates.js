@@ -47,15 +47,6 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
         data.buffer.push("\n\t\t");
         return buffer;
     }
-    function program8(depth0, data) {
-        var buffer = "", hashContexts, hashTypes;
-        data.buffer.push("\n\t\t\t");
-        hashContexts = {"unescaped":depth0};
-        hashTypes = {"unescaped":"STRING"};
-        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "excerpt", {hash:{"unescaped":("true")}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-        data.buffer.push("\n\t\t");
-        return buffer;
-    }
     data.buffer.push("<article>\n\t<h2>\n\t\t");
     hashTypes = {};
     hashContexts = {};
@@ -74,7 +65,7 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     data.buffer.push("</div>\n\t\n\t<div class=\"body\">\n\t\t");
     hashTypes = {};
     hashContexts = {};
-    stack1 = helpers["if"].call(depth0, "body", {hash:{}, inverse:self.program(8, program8, data), fn:self.program(6, program6, data), contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data});
+    stack1 = helpers["if"].call(depth0, "body", {hash:{}, inverse:self.program(6, program6, data), fn:self.program(6, program6, data), contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data});
     if (stack1 || stack1 === 0) {
         data.buffer.push(stack1);
     }
@@ -187,7 +178,7 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     data.buffer.push("<img src=\"./img/home-02.jpg\">\n");
 }
 );
-  templates['journal'] = template(
+  templates['journalIndex'] = template(
 function anonymous(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [4, ">= 1.0.0"];
     helpers = this.merge(helpers, Ember.Handlebars.helpers);

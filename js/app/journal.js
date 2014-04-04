@@ -29,7 +29,7 @@ App.JournalIndexRoute = Ember.Route.extend({
    */
   renderTemplate: function() {
 
-    this.render('journal');
+    this.render('journalIndex');
 
   }
 
