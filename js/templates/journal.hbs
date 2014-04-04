@@ -1,7 +1,3 @@
-{{#each entries}}
-  <article>
-    <h2>{{#link-to 'journal.entry' id}} {{title}} {{/link-to}}</h2>
-    <div class="meta">{{date}} at {{time}}</div>
-    <div class="body">{{excerpt}}</div>
-  </article>
+{{#each}}
+  {{partial "journal-item"}}
 {{/each}}

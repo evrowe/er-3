@@ -1,6 +1,87 @@
 // This file is auto-generated and should be ignored from version control.
 (function(){
   var template = Ember.Handlebars.template, templates = Ember.TEMPLATES = Ember.TEMPLATES || {};
+  templates['_journal-item'] = template(
+function anonymous(Handlebars, depth0, helpers, partials, data) {
+    this.compilerInfo = [4, ">= 1.0.0"];
+    helpers = this.merge(helpers, Ember.Handlebars.helpers);
+    data = data || {};
+    var buffer = "", stack1, hashTypes, hashContexts, escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    function program1(depth0, data) {
+        var buffer = "", hashTypes, hashContexts;
+        data.buffer.push("\n\t\t\t");
+        hashTypes = {};
+        hashContexts = {};
+        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
+        data.buffer.push("\n\t\t");
+        return buffer;
+    }
+    function program3(depth0, data) {
+        var buffer = "", stack1, stack2, hashTypes, hashContexts, options;
+        data.buffer.push("\n\t\t\t");
+        hashTypes = {};
+        hashContexts = {};
+        options = {hash:{}, inverse:self.noop, fn:self.program(4, program4, data), contexts:[depth0, depth0], types:["STRING", "ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data};
+        stack2 = ((stack1 = helpers["link-to"] || (depth0 && depth0["link-to"])), stack1 ? stack1.call(depth0, "journal.entry", "id", options) : helperMissing.call(depth0, "link-to", "journal.entry", "id", options));
+        if (stack2 || stack2 === 0) {
+            data.buffer.push(stack2);
+        }
+        data.buffer.push("\n\t\t");
+        return buffer;
+    }
+    function program4(depth0, data) {
+        var buffer = "", hashTypes, hashContexts;
+        data.buffer.push(" ");
+        hashTypes = {};
+        hashContexts = {};
+        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
+        data.buffer.push(" ");
+        return buffer;
+    }
+    function program6(depth0, data) {
+        var buffer = "", hashContexts, hashTypes;
+        data.buffer.push("\n\t\t\t");
+        hashContexts = {"unescaped":depth0};
+        hashTypes = {"unescaped":"STRING"};
+        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "body", {hash:{"unescaped":("true")}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
+        data.buffer.push("\n\t\t");
+        return buffer;
+    }
+    function program8(depth0, data) {
+        var buffer = "", hashContexts, hashTypes;
+        data.buffer.push("\n\t\t\t");
+        hashContexts = {"unescaped":depth0};
+        hashTypes = {"unescaped":"STRING"};
+        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "excerpt", {hash:{"unescaped":("true")}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
+        data.buffer.push("\n\t\t");
+        return buffer;
+    }
+    data.buffer.push("<article>\n\t<h2>\n\t\t");
+    hashTypes = {};
+    hashContexts = {};
+    stack1 = helpers["if"].call(depth0, "body", {hash:{}, inverse:self.program(3, program3, data), fn:self.program(1, program1, data), contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data});
+    if (stack1 || stack1 === 0) {
+        data.buffer.push(stack1);
+    }
+    data.buffer.push("\n\t</h2>\n\t<div class=\"meta\">");
+    hashTypes = {};
+    hashContexts = {};
+    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "date", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
+    data.buffer.push(" at ");
+    hashTypes = {};
+    hashContexts = {};
+    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "time", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
+    data.buffer.push("</div>\n\t\n\t<div class=\"body\">\n\t\t");
+    hashTypes = {};
+    hashContexts = {};
+    stack1 = helpers["if"].call(depth0, "body", {hash:{}, inverse:self.program(8, program8, data), fn:self.program(6, program6, data), contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data});
+    if (stack1 || stack1 === 0) {
+        data.buffer.push(stack1);
+    }
+    data.buffer.push("\n\t</div>\n</article>");
+    return buffer;
+}
+);
   templates['about'] = template(
 function anonymous(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [4, ">= 1.0.0"];
@@ -91,25 +172,11 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [4, ">= 1.0.0"];
     helpers = this.merge(helpers, Ember.Handlebars.helpers);
     data = data || {};
-    var buffer = "", hashTypes, hashContexts, escapeExpression = this.escapeExpression;
-    data.buffer.push("<article>\n\t<h2>");
+    var stack1, hashTypes, hashContexts, options, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
     hashTypes = {};
     hashContexts = {};
-    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-    data.buffer.push("</h2>\n\t<div class=\"meta\">");
-    hashTypes = {};
-    hashContexts = {};
-    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "date", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-    data.buffer.push(" at ");
-    hashTypes = {};
-    hashContexts = {};
-    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "time", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-    data.buffer.push("</div>\n\t<div class=\"body\">");
-    hashTypes = {};
-    hashContexts = {};
-    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "content", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-    data.buffer.push("</div>\n</article>");
-    return buffer;
+    options = {hash:{}, contexts:[depth0], types:["STRING"], hashContexts:hashContexts, hashTypes:hashTypes, data:data};
+    data.buffer.push(escapeExpression(((stack1 = helpers.partial || (depth0 && depth0.partial)), stack1 ? stack1.call(depth0, "journal-item", options) : helperMissing.call(depth0, "partial", "journal-item", options))));
 }
 );
   templates['index'] = template(
@@ -125,44 +192,20 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [4, ">= 1.0.0"];
     helpers = this.merge(helpers, Ember.Handlebars.helpers);
     data = data || {};
-    var stack1, hashTypes, hashContexts, escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    var stack1, hashTypes, hashContexts, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
     function program1(depth0, data) {
-        var buffer = "", stack1, stack2, hashTypes, hashContexts, options;
-        data.buffer.push("\n  <article>\n    <h2>");
+        var buffer = "", stack1, hashTypes, hashContexts, options;
+        data.buffer.push("\n  ");
         hashTypes = {};
         hashContexts = {};
-        options = {hash:{}, inverse:self.noop, fn:self.program(2, program2, data), contexts:[depth0, depth0], types:["STRING", "ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data};
-        stack2 = ((stack1 = helpers["link-to"] || (depth0 && depth0["link-to"])), stack1 ? stack1.call(depth0, "journal.entry", "id", options) : helperMissing.call(depth0, "link-to", "journal.entry", "id", options));
-        if (stack2 || stack2 === 0) {
-            data.buffer.push(stack2);
-        }
-        data.buffer.push("</h2>\n    <div class=\"meta\">");
-        hashTypes = {};
-        hashContexts = {};
-        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "date", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-        data.buffer.push(" at ");
-        hashTypes = {};
-        hashContexts = {};
-        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "time", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-        data.buffer.push("</div>\n    <div class=\"body\">");
-        hashTypes = {};
-        hashContexts = {};
-        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "excerpt", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-        data.buffer.push("</div>\n  </article>\n");
-        return buffer;
-    }
-    function program2(depth0, data) {
-        var buffer = "", hashTypes, hashContexts;
-        data.buffer.push(" ");
-        hashTypes = {};
-        hashContexts = {};
-        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{}, contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data})));
-        data.buffer.push(" ");
+        options = {hash:{}, contexts:[depth0], types:["STRING"], hashContexts:hashContexts, hashTypes:hashTypes, data:data};
+        data.buffer.push(escapeExpression(((stack1 = helpers.partial || (depth0 && depth0.partial)), stack1 ? stack1.call(depth0, "journal-item", options) : helperMissing.call(depth0, "partial", "journal-item", options))));
+        data.buffer.push("\n");
         return buffer;
     }
     hashTypes = {};
     hashContexts = {};
-    stack1 = helpers.each.call(depth0, "entries", {hash:{}, inverse:self.noop, fn:self.program(1, program1, data), contexts:[depth0], types:["ID"], hashContexts:hashContexts, hashTypes:hashTypes, data:data});
+    stack1 = helpers.each.call(depth0, {hash:{}, inverse:self.noop, fn:self.program(1, program1, data), contexts:[], types:[], hashContexts:hashContexts, hashTypes:hashTypes, data:data});
     if (stack1 || stack1 === 0) {
         data.buffer.push(stack1);
     } else {

@@ -30,61 +30,10 @@
  */
 App = Ember.Application.create();
 
-
-App.Router.map(function() {
-  // put your routes here
-  this.route("about");
-  this.resource("work", function() {
-    this.route("item", {path: "/work/:item_id" });
-  });
-  this.route("contact");
-  this.resource("journal", function() {
-    this.route("entry", {path: "/:entry_id"});
-  });
+/* Universal AJAX settings */
+$.ajaxSetup({
+  contentType: 'json' // always expect responses in JSON format
 });
-
-
-/**
- * An Ember route for the journal entries list
- *
- * @memberof App
- * @constructor
- * @extends external:Ember.Route
- */
-App.JournalRoute = Ember.Route.extend({
-  model: function() {
-    return Ember.$.getJSON('js/entries.json');
-  }
-});
-
-
-/**
- * An Ember route for a single journal entry
- *
- * @memberof App
- * @constructor
- * @extends external:Ember.Route
- */
-App.EntryRoute = Ember.Route.extend({
-  model: function(params) {
-    var entryList = Ember.$.getJSON('js/entries.json');
-    return entryList.find("entry", params.entry_id);
-  }
-});
-
-
-
-/**
- * An Ember model for journal entries
- *
- * @memberof App
- * @constructor
- * @extends external:DS.Model
- */
-/*App.Entry = DS.Model.extend({
-
-});*/
-
 
 /* Fixed nav on scroll (lives outside context of Ember app) */
 
