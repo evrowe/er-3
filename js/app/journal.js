@@ -5,9 +5,7 @@
  * @constructor
  * @extends external:Ember.Route
  */
-App.JournalRoute = Ember.Route.extend({
-
-  pageTitle: 'Journal',
+App.JournalIndexRoute = Ember.Route.extend({
 
   // Overrides
   /**
@@ -19,7 +17,7 @@ App.JournalRoute = Ember.Route.extend({
    */
   model: function() {
 
-    return App.Journal.findAll();
+    return App.Entries.findAll();
 
   },
 
@@ -46,9 +44,9 @@ App.JournalRoute = Ember.Route.extend({
  * @extends external:Ember.Object
  */
 
-App.Journal = Ember.Object.extend();
+App.Entries = Ember.Object.extend();
 
-App.Journal.reopenClass({
+App.Entries.reopenClass({
   /**
    * @memberof App.Journal
    * @instance
@@ -63,8 +61,6 @@ App.Journal.reopenClass({
 
       // Success
       function(data) {
-
-        console.log(data);
 
         /*var endEntryIndex = 0,
             i = 0,
@@ -150,7 +146,7 @@ App.Entry = Ember.Object.extend();
 
 App.Entry.reopenClass({
   /**
-   * @memberof App.Entry
+   * @memberof App.JournalEntry
    * @instance
    * @param {string} id The model's ID
    * @returns {Object}

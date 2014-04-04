@@ -184,7 +184,7 @@ function anonymous(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [4, ">= 1.0.0"];
     helpers = this.merge(helpers, Ember.Handlebars.helpers);
     data = data || {};
-    data.buffer.push("<img src=\"./img/youredoom.jpg\">\n");
+    data.buffer.push("<img src=\"./img/home-02.jpg\">\n");
 }
 );
   templates['journal'] = template(
