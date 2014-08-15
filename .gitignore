@@ -22,6 +22,14 @@ ehthumbs.db
 Thumbs.db
 *.swp
 
+# Bower manifest #
+##################
+.bower.json
+
 # JSDoc #
 #########
 docs/
+
+# node.js modules #
+###################
+node_modules/
