@@ -47,7 +47,7 @@ App.Work.reopenClass({
       // Success
       function(data) {
 
-        var items = [];
+        /*var items = [];
 
         for (i = 0; i < data.length; i++) {
 
@@ -55,7 +55,9 @@ App.Work.reopenClass({
 
         }
 
-        return items;
+        return items;*/
+
+        return data;
 
       },
 

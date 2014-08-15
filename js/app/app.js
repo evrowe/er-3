@@ -33,7 +33,7 @@ App = Ember.Application.create();
 /* Universal AJAX settings */
 $.ajaxSetup({
 
-  contentType: 'json' // always expect responses in JSON format
+  contentType: 'application/json' // always expect responses in JSON format
 
 });
 
