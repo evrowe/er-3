@@ -4,7 +4,7 @@ $ltorange: #fecd67;
 
 // global/shared styles
 a {
-  color: $orange;
+  color: darken($orange, 15%);
   transition: color .3s;
   &:hover {
     color: #000;

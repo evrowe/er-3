@@ -31,11 +31,13 @@
   }
 
   img {
-    border-bottom: 5px solid transparent;
+    border: 1px solid #cccccc;
+    margin-bottom: 4px;
     transition: .25s border-bottom-color;
 
     &:hover {
-      border-bottom-color: $orange;
+      border-bottom: 5px solid $orange;
+      margin-bottom: 0;
     }
   }
 

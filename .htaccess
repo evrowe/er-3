@@ -1,1 +1,5 @@
 AddType application/json .json
+
+# Redirect 301 email-redirect.html mailto:er@evan-rowe.com
+RewriteCond ^email-redirect.html
+RewriteRule ^$ mailto:er@evan-rowe.com
