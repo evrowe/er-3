@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Player vs Player (PvP)",
+    "url": "http://www.pvponline.com",
+    "image": "img/work/pvp-01.jpg",
+    "roles": "UX/UI Design, Development, DevOps",
+    "linkText": "www.pvponline.com"
+  },
+  {
+    "title": "Table Titans",
+    "url": "http://www.tabletitans.com",
+    "image": "img/work/tabletitans-01.jpg",
+    "roles": "UX/UI Design, Development, DevOps",
+    "linkText": "www.tabletitans.com"
+  },
+  {
+    "title": "ShiftyLook",
+    "url": "http://www.shiftylook.com",
+    "image": "img/work/shiftylook-01.jpg",
+    "roles": "Development, DevOps",
+    "linkText": "www.shiftylook.com"
+  },
+  {
+    "title": "Unitus",
+    "url": "https://www.unitusccu.com",
+    "image": "img/work/unitus.jpg",
+    "roles": "Development",
+    "linkText": "www.unitusccu.com"
+  },
+  {
+    "title": "Verlasso",
+    "url": "http://www.verlasso.com",
+    "image": "img/work/verlasso-02.jpg",
+    "roles": "Development",
+    "linkText": "www.verlasso.com"
+  },
+  {
+    "title": "Oregon Jamboree",
+    "url": "http://www.oregonjamboree.com",
+    "image": "img/work/oregon-jamboree.jpg",
+    "roles": "Development",
+    "linkText": "www.oregonjamboree.com"
+  }
+]

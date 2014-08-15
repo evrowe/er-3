@@ -1,0 +1,61 @@
+.greeting {
+
+  h1 {
+    color: $orange;
+    font-family: 'Din Black';
+    font-size: 72px;
+    line-height: 80px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 30px;
+    color: #444444;
+    margin: 0;
+  }
+
+}
+
+.work-item {
+
+  margin-top: 55px;
+
+  h4 {
+    color: $orange;
+    font-family: 'Din Black';
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  img {
+    border-bottom: 5px solid transparent;
+    transition: .25s border-bottom-color;
+
+    &:hover {
+      border-bottom-color: $orange;
+    }
+  }
+
+  .info {
+    color: #333333;    line-height: 1.4rem;
+    margin-top: 12px;
+    text-align: left;
+
+    span {
+      clear: both;
+      display: block;
+
+      strong {
+        color: #999999;
+        font-family: 'Din Bold';
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+
+  }
+
+}

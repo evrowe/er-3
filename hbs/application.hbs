@@ -1,11 +1,11 @@
 <header>
   <nav class="row">
     <div class="large-12 columns">
-      {{#link-to 'index' class='logo'}}<img src="img/er-mark-full.png" width="35">{{/link-to}}
-      {{#link-to 'work'}}Work{{/link-to}}
-      {{#link-to 'journal'}}Journal{{/link-to}}
-      {{#link-to 'about'}}About{{/link-to}}
-      {{#link-to 'contact'}}Contact{{/link-to}}
+      {{#link-to "index" class="logo large-1 medium-1 small-3"}}<img src="img/er-mark-full.png" width="35">{{/link-to}}
+      {{!--#link-to 'work'}}Work{{/link-to}}
+      {{#link-to 'journal'}}Journal{{/link-to--}}
+      {{#link-to "about" class="large-1 medium-1 small-3"}}About{{/link-to}}
+      {{#link-to "contact" class="large-1 medium-1 small-3"}}Contact{{/link-to}}
     </div>
   </nav>
 </header>
@@ -18,6 +18,10 @@
 
 <footer>
   <div class="row">
-    &copy;2014 Evan Rowe. Built on <a href="http://www.emberjs.com" target="_blank">Ember.js</a> and constructed mercilessly from <a href="https://github.com/jneurock/viking-base">Viking Base</a>.
+    <div class="large-12 columns">
+      <div class="large-logo"></div>
+      <p>&copy;2014 Evan Rowe.<br>
+      Built on <a href="http://www.emberjs.com" target="_blank">Ember.js</a> and constructed mercilessly from <a href="https://github.com/jneurock/viking-base">Viking Base</a>.</p>
+    </div>
   </div>
 </footer>

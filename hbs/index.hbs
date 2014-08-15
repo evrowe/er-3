@@ -1,1 +1,26 @@
-<img src="./img/home-02.jpg">
+{{! <img src="./img/home-02.jpg"> }}
+
+<section class="row greeting" id="greeting">
+  <div class="large-12 columns">
+    <h1>Hello.</h1>
+    <h2>My name is Evan.</h2>
+    <h2>This is some of my recent work.</h2>
+  </div>
+</section>
+
+<section class="row" id="work">
+
+  {{#each}}
+    <div class="large-4 medium-6 small-12 columns work-item">
+      <h4 class="title">{{title}}</h4>
+      <a class="image" target="_blank" {{bind-attr href=url}}>
+        <img {{bind-attr src=image}}>
+      </a>
+      <div class="info">
+        <span><strong>Role:</strong> {{roles}}</span>
+        <span><strong>URL:</strong> <a {{bind-attr href=url}} target="_blank">{{linkText}}</a></span>
+      </div>
+    </div>
+  {{/each}}
+
+</section>
