@@ -1,0 +1,12 @@
+// set colors
+$orange: #faa73f;
+$ltorange: #fecd67;
+
+// global/shared styles
+a {
+  color: $orange;
+  transition: color .3s;
+  &:hover {
+    color: #000;
+  }
+}

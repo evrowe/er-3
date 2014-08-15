@@ -1,0 +1,75 @@
+// application layout
+body {
+  background: #f0f0f0 url(../img/style/bg-texture.png) repeat;
+  color: #333;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Din Bold";
+  font-weight: normal;
+}
+
+header {
+  background: $white;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 15px;
+  padding: 0;
+  transition: all .3s;
+  width: 100%;
+
+  nav {
+    margin: 0 auto;
+    max-width: 62.5rem;
+
+    a {
+      border-bottom: 4px solid $white;
+      float: left;
+      font-family: "Din Bold";
+      font-size: 18px;
+      margin-right: 2%;
+      padding: 15px 0 11px 5px;
+      transition: all .2s;
+      width: 11%;
+
+      &.logo {
+        border-bottom: 0;
+        margin-right: 0;
+        padding-bottom: 0;
+        padding-top: 6px;
+      }
+
+      &:hover,
+      &.current {
+        color: darken($orange, 15%);
+        border-bottom-color: darken($orange, 15%);
+      }
+
+    }
+
+  }
+
+}
+
+footer {
+  padding: 12px 0;
+  margin: 25px auto 0;
+  position: relative;
+  border-top: 1px solid #111;
+  color: #ccc;
+  font-size: 12px;
+  background: #333 url(../img/style/bg-footer.png) repeat;
+  &:before {
+    content: "";
+    border-top: 1px solid #777;
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+  }
+}

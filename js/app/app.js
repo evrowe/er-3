@@ -32,12 +32,15 @@ App = Ember.Application.create();
 
 /* Universal AJAX settings */
 $.ajaxSetup({
+
   contentType: 'json' // always expect responses in JSON format
+
 });
 
 /* Fixed nav on scroll (lives outside context of Ember app) */
+/* Keep this for later; may want it back for parallax scrolling or something. */
 
-var _er = {};
+/*var _er = {};
 _er.navFixed = false,
 _er.latestKnownScrollY = 0,
 _er.ticking = false,
@@ -97,3 +100,4 @@ _er.navBar = function(currentScrollY) {
 window.onscroll = function() {
     _er.onScroll();
 }
+*/

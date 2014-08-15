@@ -1,0 +1,23 @@
+<header>
+  <nav class="row">
+    <div class="large-12 columns">
+      {{#link-to 'index' class='logo'}}<img src="img/er-mark-full.png" width="35">{{/link-to}}
+      {{#link-to 'work'}}Work{{/link-to}}
+      {{#link-to 'journal'}}Journal{{/link-to}}
+      {{#link-to 'about'}}About{{/link-to}}
+      {{#link-to 'contact'}}Contact{{/link-to}}
+    </div>
+  </nav>
+</header>
+
+<section class="row primary">
+  <div class="large-12 columns">
+    {{outlet}}
+  </div>
+</section>
+
+<footer>
+  <div class="row">
+    &copy;2014 Evan Rowe. Built on <a href="http://www.emberjs.com" target="_blank">Ember.js</a> and constructed mercilessly from <a href="https://github.com/jneurock/viking-base">Viking Base</a>.
+  </div>
+</footer>

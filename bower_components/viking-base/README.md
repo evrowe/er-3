@@ -1,118 +1,110 @@
-The Viking Base is a set of front-end technologies that have been combined to create a solid platform with which to build web applications.
-
-The package exists to accomplish a few main goals:
-
-* Combine Ember, Handlebars, Foundation and HTML5 Boilerplate
-* Generate production or development output with the H5BP Ant Build Script
-* Manage platform dependencies with Bower
+Viking Base is an opinionated package intended to provide a solid starting point for building web applications. The package consists of several key components: Ember.js, Handlebars.js, Foundation and gulp. Viking Base leans on Bower to manage dependencies and gulp to build while providing a simple scaffolding script.
 
 Currently, the package consists of:
 
-* Ember 1.5
-* Handlebars 1.1.2
-* Foundation 5.2.1
-* HTML5 Boilerplate Ant Build Script
-* HTML5 Boilerplate 4.3
-* Modernizr 2.7.1
-* Respond 1.4.1
+* Ember.js 1.6.1
+* Handlebars.js 1.1.2
+* Foundation 5.3.1
+* Modernizr 2.8.3
+* Respond 1.4.2
 
-# Quick Start Guide
+## Getting Started
 
+Install the package via Bower:  
+`bower install viking-base`
+
+Run the scaffolding script:  
+`node bower_components/viking-base/install`
+
+Install the gulp build dependencies:  
+`npm install`
+
+Try out the dev build:  
+`gulp dev`
+
+## gulp Targets
+
+Viking Base includes three gulp build targets: dev, prod and default (which does not need to be specified). The goals of the gulp build are:
+
+* Compile Sass
+* Compile Handlebars templates
+* Generate JSDoc documentation
+* Output to a publish folder
+* For production:
+    * Minify CSS
+    * Concatenate and minify JavaScript
+    * Hash CSS and JavaScript ouput file names
+
+**default**  
+The `default` build runs a `dev` build first and then watches Sass and Handlebars resources for changes. There is no need to tell gulp which build to run in this case. Simply run gulp:  
+`gulp`
+
+**dev**  
+The `dev` build is similar to the `prod` build except that it doesn’t minify or concatenate any resources. To run the `dev` build:  
+`gulp dev`
+
+**prod**  
+The `prod` build does the same thing as the `dev` build but also concatenates and minifies CSS and JavaScript resources. The `prod` build also hashes the output file names. To run the prod build:  
+`gulp prod`
+
+## Extending Viking Base
+The Viking Base node module provides a simple API for adding, removing or modifying gulp tasks. Every part of the gulp build is configurable. Here are the main configurable aspects of the build:
+
+* gulp tasks
+* Input sources
+* Output paths
+* Watch dependencies
+* Clean task options
+
+When gulpfiles.js requires the node module, the module exports a simple hash that can be manipulated any way you'd like. See `bower_components/viking-base/node_modules/viking-base/index.js` as a reference. This approach allows for Bower updates of Viking Base to bring in bug fixes and new features without writing over your build customizations.
+
+To customize the build, edit `gulpfile.js`. In the following example, we'll add a simple image task. You will see how a new task can be added that also becomes a dependency of a built-in task. 
+
+Example:
+
+```javascript
+// Output updates
+vb.output.img = 'img/';
+
+// Source updates
+vb.sources.img = 'img/**/*';
+
+// Task updates
+vb.tasks.build.depends = [
+  'handlebars',
+  'img',
+  'js-doc',
+  'root'
+];
+
+vb.tasks.handlebars.depends = ['img'];
+
+vb.tasks.img = {
+  cb: function() {
+
+    return gulp.src( this.sources.img )
+      .pipe( gulp.dest( this.output.publish + this.output.img ) );
+  }
+};
+
+// Modify tasks as you need before calling vb.registerGulpTasks
+vb.registerGulpTasks();
 ```
-# Create a directory for your project
-mkdir <my-project> && cd <my-project>
 
-# Install the package with Bower
-bower install viking-base
+## Updating Viking Base
 
-# Run the install script
-node bower_components/viking-base/example-install
+Updates to Viking Base may consist of simple dependency updates or gulp file updates. To update Viking base run:  
+`bower update`
 
-# Build the debug version of the Hello Vikings app with Maven or Ant
-mvn clean package -D target=debug
-or
-ant -f bower_components/viking-base/build-custom debug
-```
+**Note:** Though unlikely, it is possible that Viking Base might have node module dependency updates. You can compare `bower_components/viking-base/package.json` with your project's `package.json` if you update Viking Base to a new major or minor version. Patch version updates should not contain node module dependency updates.
 
-# System Requirements
-The project is known to work with the following:
-
-* Java 1.6+
-* Maven 3.0+ or Ant 1.8.2+
-* Node.js 0.10.7+
-* Bower 1.2.8+
-
-# Setting up a New Project
-
-```
-# Create a directory for your project
-mkdir <my-project>
-
-# Change into your project directory
-cd <my-project>
-
-# Install the package with Bower
-bower install viking-base
-
-# Run the install script
-node bower_components/viking-base/example-install
-```
-
-After running the install script you will be ready to build. Out-of-the box your project will build a Hello Vikings demo application.
-
-# Building Your Project
-You can build your project with Maven or Ant. The build command should be executed from the project root. There are a number of build targets to choose from:
-
-* No target - Will start a production build
-* debug - Does not concatinate or minify JavaScript files. Concatenates but does not minify CSS files.
-* debugcss - Concatenates but does not minify CSS files.
-* debugdocs - Same as "debug" target but also generates JSDoc documentation.
-* debughbs - If you just need to publish updates to your Handlebars templates.
-* debugjs - If you just need to publish updates to your JavaScript files.
-* docs - Generates JSDoc documentation only.
-
-When the build is finished, you should have a publish directory containing your project output (unless only building documentation). Documentation will be output to the "docs" directory in the project root.
-
-## Building with Maven
-If you are using Maven to build your project you need to add build targets by using the "-P" flag. A build target is optional.
-
-No target:
-`mvn clean package`
-
-Some target:
-`mvn clean package -D target=<target-name>`
-
-## Building with Ant
-`ant -f bower_components/viking-base/build-custom <optional-target-name>`
-
-## Skipping the Jar Target
-By default, the build will Jar the contents of your project. If you don't want this behavior you can set the "jarPhase" property to "never" from the command line:
-`mvn clean package -D jarPhase=never`
-or
-`ant -f bower_components/viking-base/build-custom -DjarPhase=never`
-
-Note that Ant requires no space between the -D flag and the following property where as Maven does allow for a space.
-
-If you really don't want to ever Jar the contents of your project, you can edit the POM and set &lt;jarPhase&gt;never&lt;/jarPhase&gt; instead of the default which is "package".
-
-## Customizing the build
-It's possible to customize your build by adding your own build.xml file. In your build file you would include the base build file found at bower_components/viking-base/build-custom/build.xml. You can add new targets, override existing targets, add new properties or override existing properties. You can then tell Ant to use your build file or modify the POM so Maven will use it.
-
-## Versioning Your Project
-Aside from using Git tags to keep track of your project version, you can also keep track of the version in the POM. Even if you build your project with Ant, the build will look to the POM for the version number.
-
-# Why Would I Use This?
-If I use Node and/or Compass and/or Grunt, etc., why would I use this? This platform is meant for developers that need to deploy their applications with build tools, e.g., Jenkins or who might work in a company that develops Java applications that want a more modern front-end stack than JSP can facilitate. This platform might not be suited for developers that already include Foundation or Ember in their projects through some other method.
-
-# References
-* [HTML5 Boilerplate](http://html5boilerplate.com/)
-* [HTML5 Boilerplate Ant Build Script](https://github.com/h5bp/ant-build-script)
+## References
+* [node.js](http://nodejs.org/)
+* [npm](http://npmjs.org/)
+* [gulp](http://gulpjs.com/)
+* [Bower](http://bower.io/)
 * [Ember.js](http://emberjs.com/)
 * [Ember Starter Kit](https://github.com/emberjs/starter-kit)
 * [Handlebars.js](http://handlebarsjs.com/)
 * [Foundation](http://foundation.zurb.com/)
-* [Node.js](http://nodejs.org/)
-* [Bower](http://bower.io/)
-* [Maven](http://maven.apache.org/)
-* [Ant](http://ant.apache.org/)
 * [JSDoc](http://usejsdoc.org/)
