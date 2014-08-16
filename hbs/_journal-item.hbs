@@ -1,16 +1,21 @@
 <article>
 	<h2>
-		{{#if body}}
+		{{#if model.content}}
 			{{title}}
 		{{else}}
 			{{#link-to 'journal.entry' id}} {{title}} {{/link-to}}
 		{{/if}}
 	</h2>
-	<div class="meta">{{date}} at {{time}}</div>
-	
+	<div class="meta">
+		<span class="creation">Published on {{created}} at {{createdTime}}</span>
+		{{#if updated}}
+		<span class="updated">Updated on {{updated}} at {{updatedTime}}
+		{{/if}}
+	</div>
+
 	<div class="body">
-		{{#if body}}
-			{{{body}}}
+		{{#if model.content}}
+			{{{model.content}}}
 		{{else}}
 			{{{excerpt}}}
 		{{/if}}
