@@ -18,7 +18,7 @@ h6 {
 header {
   background: $white;
   border-bottom: 1px solid #ccc;
-  margin: 0 0 35px;
+  margin: 0;
   padding: 0;
   transition: all .3s;
   width: 100%;
@@ -99,4 +99,8 @@ footer {
     width: 300px;
   }
 
+}
+
+.content-section {
+  margin-top: 35px;
 }

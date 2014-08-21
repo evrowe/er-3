@@ -49,18 +49,32 @@
     <!--<![endif]-->
 
     <!-- htmlbuild:js -->
+    <!-- vendor libs -->
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/foundation/js/foundation/foundation.js"></script>
     <script src="bower_components/handlebars/handlebars.runtime.js"></script>
     <script src="bower_components/ember-starter-kit/js/libs/ember-1.6.1.js"></script>
 
+    <!-- setup -->
     <script src="js/templates.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/pre-app.js"></script>
+
+    <!-- application -->
     <script src="js/app/app.js"></script>
-    <script src="js/app/index.js"></script>
-    <script src="js/app/route-map.js"></script>
-    <script src="js/app/journal.js"></script>
+    <script src="js/app/router.js"></script>
+
+    <!-- routes -->
+    <script src="js/routes/index_route.js"></script>
+    <script src="js/routes/journalIndex_route.js"></script>
+    <script src="js/routes/journalEntry_route.js"></script>
+
+    <!-- models -->
+    <script src="js/models/entries_model.js"></script>
+    <script src="js/models/entry_model.js"></script>
+    <script src="js/models/work_model.js"></script>
+
+    <!-- final init -->
     <script src="js/main.js"></script>
     <!-- endbuild -->
 

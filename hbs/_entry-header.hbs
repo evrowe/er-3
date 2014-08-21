@@ -1,0 +1,19 @@
+<h2>
+  {{#if model.content}}
+    {{title}}
+  {{else}}
+    {{#link-to 'journal.entry' id}} {{title}} {{/link-to}}
+  {{/if}}
+</h2>
+<div class="entry-meta">
+  <p>
+  <span class="creation">Published on <time>{{created}}</time>{{#if createdTime}} at <time>{{createdTime}}</time>{{/if}}</span>
+  {{#if updated}}
+    <span class="updated">[ Updated on <time>{{updated}}</time>{{#if updatedTime}} at <time>{{updatedTime}}</time>{{/if}} ]</span>
+  {{/if}}
+  </p>
+
+  {{#if category}}
+    <p><span class="category">Filed under {{category}}</span></p>
+  {{/if}}
+</div>

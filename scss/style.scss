@@ -36,10 +36,12 @@
   "../bower_components/foundation/scss/foundation/components/type",
   "../bower_components/foundation/scss/foundation/components/offcanvas",
   "../bower_components/foundation/scss/foundation/components/visibility",
-  "./base/_global.scss",
   "./fonts/_font-din.scss",
+  "./base/_global.scss",
+  "./base/_typography.scss",
   "./modules/application.scss",
-  "./modules/index.scss";
+  "./modules/index.scss",
+  "./modules/entry.scss";
 
 // Optional IE 8 Grid Styles
 // @import url("../bower_components/viking-base/css/foundation-ie8/ie8-grid-foundation-4.css");

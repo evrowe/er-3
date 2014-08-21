@@ -1,1 +1,26 @@
-{{partial "journal-item"}}
+<article {{bindAttr class="headerImage::content-section :full-article"}}>
+  {{#if headerImage}}
+  <div class="hero-image">
+    <img {{bind-attr src=headerImage}} />
+  </div>
+  {{/if}}
+  <div class="row">
+    <div {{bindAttr class="headerImage:image-header :entry-header :large-9 :columns"}}>
+      {{partial "entry-header"}}
+    </div>
+  </div>
+
+  <div class="row entry-content">
+    <div class="medium-10 medium-push-1 columns">
+      {{{model.content}}}
+
+      <div class="entry-taxonomy">
+        <p>tagged: {{#each tag in tags}}
+          <span class="pill">{{tag}}</span>
+        {{/each}}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</article>

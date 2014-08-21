@@ -5,9 +5,9 @@ category: tests
 excerpt: This is a test post
 created: 8/16/2014
 createdTime: 10:28am
-upated:
+updated:
 updatedTime:
-tags: testing, journal, lazorz
+tags: ['testing', 'journal', 'lazorz']
 ---
 
 # Here There be Lazorz

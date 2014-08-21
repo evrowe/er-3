@@ -5,9 +5,9 @@ category: tests
 excerpt: This is another test post
 created: 8/16/2014
 createdTime: 10:25am
-upated:
+updated:
 updatedTime:
-tags: testing, journal, stuff
+tags: ['testing', 'journal', 'stuff']
 ---
 
 # Test For Glory

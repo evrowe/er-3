@@ -1,23 +1,15 @@
 <article>
-	<h2>
-		{{#if model.content}}
-			{{title}}
-		{{else}}
-			{{#link-to 'journal.entry' id}} {{title}} {{/link-to}}
-		{{/if}}
-	</h2>
-	<div class="meta">
-		<span class="creation">Published on {{created}} at {{createdTime}}</span>
-		{{#if updated}}
-		<span class="updated">Updated on {{updated}} at {{updatedTime}}
-		{{/if}}
-	</div>
-
-	<div class="body">
-		{{#if model.content}}
-			{{{model.content}}}
-		{{else}}
-			{{{excerpt}}}
-		{{/if}}
-	</div>
+  <div class="large-12 entry-header">
+    {{partial "entry-header"}}
+  </div>
+  <div class="large-12 entry-excerpt">
+    {{{excerpt}}}
+  </div>
+  <div class="large-12 entry-taxonomy">
+    {{#if tags}}
+      tagged: {{#each tag in tags}}
+        <span class="pill">{{tag}}</span>
+      {{/each}}
+    {{/if}}
+  </div>
 </article>
