@@ -7,9 +7,7 @@
   </div>
   <div class="large-12 entry-taxonomy">
     {{#if tags}}
-      tagged: {{#each tag in tags}}
-        <span class="pill">{{tag}}</span>
-      {{/each}}
+      {{partial "tags"}}
     {{/if}}
   </div>
 </article>

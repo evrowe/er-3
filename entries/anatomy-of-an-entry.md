@@ -13,7 +13,7 @@ headerImage: http://f.cl.ly/items/383O2F1w42442z1c1G0N/viperHeadingToDock.jpg
 
 ## Context
 
-> Some text is here and isn't that fun, yay!
+> Some text is here and isn't that fun, yay! Also if i keep typing long enough it might even go all the way to two lines or maybe more than that and I just don't know if I can handle that ok thank you goodnight.
 
 When I finally sat down to start remaking my site in earnest, a task I've been putting off for about five years now, I knew I needed to do things "the right way." This means a a lot of things to a lot of different people, but for me it ultimately meant that whatever I created had to meet the following criteria:
 - It must be built on a framework of technologies that I actively work with

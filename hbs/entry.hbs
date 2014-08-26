@@ -5,21 +5,25 @@
   </div>
   {{/if}}
   <div class="row">
-    <div {{bindAttr class="headerImage:image-header :entry-header :large-9 :columns"}}>
+    <div {{bindAttr class="headerImage:image-header :entry-header :medium-10 :medium-push-1 :columns"}}>
       {{partial "entry-header"}}
     </div>
   </div>
 
   <div class="row entry-content">
     <div class="medium-10 medium-push-1 columns">
+
+      {{#if category}}
+        {{partial "category"}}
+      {{/if}}
+
       {{{model.content}}}
 
-      <div class="entry-taxonomy">
-        <p>tagged: {{#each tag in tags}}
-          <span class="pill">{{tag}}</span>
-        {{/each}}
-        </p>
-      </div>
+      {{#if tags}}
+        <div class="entry-taxonomy">
+          {{partial "tags"}}
+        </div>
+      {{/if}}
 
     </div>
   </div>

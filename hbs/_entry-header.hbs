@@ -13,7 +13,9 @@
   {{/if}}
   </p>
 
-  {{#if category}}
-    <p><span class="category">Filed under {{category}}</span></p>
-  {{/if}}
+  {{#unless model.content}}
+    {{#if category}}
+      {{partial "category"}}
+    {{/if}}
+  {{/unless}}
 </div>

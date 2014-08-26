@@ -21,10 +21,6 @@
     margin-bottom: 0;
   }
 
-  time {
-    font-weight: bold;
-  }
-
   .updated {
     color: #444;
   }
@@ -66,7 +62,7 @@
 }
 
 .entry-content {
-  margin-top: 40px;
+  margin-top: 30px;
 
   .entry-taxonomy {
     border-top: 1px solid #ccc;
@@ -77,6 +73,7 @@
 }
 
 .entry-taxonomy {
+  color: #666;
   font-size: .85rem;
   margin-bottom: 40px;
 }
@@ -85,5 +82,18 @@
   background: lighten($orange, 10%);
   border-radius: 3px;
   color: #ffffff;
+  margin-left: 5px;
   padding: 3px 5px;
+}
+
+.category {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  .entry-content & {
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
 }
