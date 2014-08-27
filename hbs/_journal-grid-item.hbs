@@ -1,0 +1,15 @@
+{{#link-to 'journal.entry' id}}
+  <article class="journal-grid-item">
+    <div class="post-image">
+      <img {{bind-attr src=headerImage}} />
+    </div>
+    <div class="post-info">
+      <h2>{{title}}</h2>
+      <hr>
+      {{created}} | {{category}}
+    </div>
+    <div class="post-icon">
+      <span class="icon-uniE600"></span>
+    </div>
+  </article>
+{{/link-to}}

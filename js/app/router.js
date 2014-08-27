@@ -10,6 +10,14 @@ App.Router.map(function() {
         path: '/:entry_id'
       });
 
+      this.route('category', {
+        path: '/category/:category_id'
+      });
+
+      this.route('tag', {
+        path: '/tag/:tag_id'
+      });
+
       this.route('page', {
         path: '/page/:page_id'
       });

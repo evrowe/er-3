@@ -13,8 +13,8 @@ App.Entries.reopenClass({
    * @memberof App.Journal
    * @instance
    * @param {object} [options] An object containing optional filter parameters
-    * @param {string} [category] A category to filter by
-    * @param {number} [page] Which page of posts to return
+   * @param {string} [category] A category to filter by
+   * @param {number} [page] Which page of posts to return
    * @returns {Array.<Object>}
    */
   findAll: function(options) {
@@ -37,6 +37,31 @@ App.Entries.reopenClass({
           entries.push(data[i]);
 
         }
+
+        console.info(options);
+
+        // filter items by category
+        if ( options && options.category ) {
+
+          entries = entries.filterBy('category', options.category);
+
+        }
+
+        // filter items by tag
+        if ( options && options.tag ) {
+
+          entries = entries.filter(function(item, index, self) {
+
+            if ( item.tags.indexOf(options.tag) !== -1 ) {
+
+              return true
+
+            }
+
+          })
+
+        }
+
 
         return entries;
 

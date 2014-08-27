@@ -1,10 +1,28 @@
-<div class="row content-section entry-list">
-  <div class="medium-10 medium-push-1 large-9 large-push-0 columns">
+<div class="row content-section">
+  <div class="small-9 medium-push-1 large-9 large-push-0 columns">
     <h1>Notes</h1>
-    <h4 class="subheader">(alternatively: "Scribblings," "Things Nobody Will Read)"</h4>
-
-    {{#each}}
-      {{partial "journal-item"}}
-    {{/each}}
+  </div>
+  <div class="small-2 large-1 small-end columns display-style">
+    <span {{bind-attr class=":toggle-button :icon-menu gridLayout::active"}} {{action "toggleProp" "gridLayout"}}></span><span {{bind-attr class=":toggle-button :icon-grid gridLayout:active"}} {{action "toggleProp" "gridLayout"}}></span>
   </div>
 </div>
+
+
+
+{{#if gridLayout}}
+  <div class="row entry-grid">
+    {{#each}}
+    <div class="small-12 medium-6 large-4 columns">
+      {{partial "journal-grid-item"}}
+    </div>
+    {{/each}}
+  </div>
+{{else}}
+  <div class="row entry-list">
+    <div class="medium-10 medium-push-1 large-9 large-push-0 columns">
+      {{#each}}
+        {{partial "journal-item"}}
+      {{/each}}
+    </div>
+  </div>
+{{/if}}

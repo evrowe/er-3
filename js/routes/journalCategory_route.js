@@ -5,26 +5,28 @@
  * @constructor
  * @extends external:Ember.Route
  */
-App.JournalIndexRoute = Ember.Route.extend({
+App.JournalCategoryRoute = Ember.Route.extend({
 
   // Overrides
   /**
    * Specify the route's model
    *
-   * @memberof App.JournalIndexRoute
+   * @memberof App.JournalCategoryRoute
    * @instance
    * @returns {Array.<EntryItem>}
    */
-  model: function() {
+  model: function(params) {
 
-    return App.Entries.findAll();
+    return App.Entries.findAll({
+      category: params.category_id
+    });
 
   },
 
   /**
    * Render the journal index template
    *
-   * @memberof App.JournalIndexRoute
+   * @memberof App.JournalCategoryRoute
    * @instance
    */
   renderTemplate: function() {

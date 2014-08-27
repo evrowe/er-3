@@ -1,11 +1,18 @@
 Ember.TEMPLATES["_category"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1;
+  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing;
 
+function program1(depth0,data) {
+  
+  var stack1;
+  stack1 = helpers._triageMustache.call(depth0, "category", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  else { data.buffer.push(''); }
+  }
 
   data.buffer.push("<div class=\"category\"><span class=\"icon-uniE600\"></span>Filed under ");
-  stack1 = helpers._triageMustache.call(depth0, "category", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "journal.category", "category", options) : helperMissing.call(depth0, "link-to", "journal.category", "category", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</div>");
   return buffer;
@@ -114,6 +121,36 @@ function program12(depth0,data) {
   return buffer;
   
 });
+Ember.TEMPLATES["_journal-grid-item"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var stack1, helper, options, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n  <article class=\"journal-grid-item\">\n    <div class=\"post-image\">\n      <img ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'src': ("headerImage")
+  },hashTypes:{'src': "ID"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" />\n    </div>\n    <div class=\"post-info\">\n      <h2>");
+  stack1 = helpers._triageMustache.call(depth0, "title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</h2>\n      <hr>\n      ");
+  stack1 = helpers._triageMustache.call(depth0, "created", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" | ");
+  stack1 = helpers._triageMustache.call(depth0, "category", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    </div>\n    <div class=\"post-icon\">\n      <span class=\"icon-uniE600\"></span>\n    </div>\n  </article>\n");
+  return buffer;
+  }
+
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "journal.entry", "id", options) : helperMissing.call(depth0, "link-to", "journal.entry", "id", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  else { data.buffer.push(''); }
+  
+});
 Ember.TEMPLATES["_journal-item"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -144,16 +181,25 @@ function program1(depth0,data) {
 Ember.TEMPLATES["_tags"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this;
+  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
-  var buffer = '', stack1;
-  data.buffer.push("\n    <span class=\"pill\">");
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n    ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{
+    'class': ("pill")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "journal.tag", "tag", options) : helperMissing.call(depth0, "link-to", "journal.tag", "tag", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  ");
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var stack1;
   stack1 = helpers._triageMustache.call(depth0, "tag", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</span>\n  ");
-  return buffer;
+  else { data.buffer.push(''); }
   }
 
   data.buffer.push("<p>\n  <span class=\"icon-tag\"></span>tagged: ");
@@ -345,17 +391,55 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
+  var buffer = '', stack1;
+  data.buffer.push("\n  <div class=\"row entry-grid\">\n    ");
+  stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[],types:[],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </div>\n");
+  return buffer;
+  }
+function program2(depth0,data) {
+  
   var buffer = '', helper, options;
-  data.buffer.push("\n      ");
-  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "journal-item", options) : helperMissing.call(depth0, "partial", "journal-item", options))));
-  data.buffer.push("\n    ");
+  data.buffer.push("\n    <div class=\"small-12 medium-6 large-4 columns\">\n      ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "journal-grid-item", options) : helperMissing.call(depth0, "partial", "journal-grid-item", options))));
+  data.buffer.push("\n    </div>\n    ");
   return buffer;
   }
 
-  data.buffer.push("<div class=\"row content-section entry-list\">\n  <div class=\"medium-10 medium-push-1 large-9 large-push-0 columns\">\n    <h1>Notes</h1>\n    <h4 class=\"subheader\">Alternatively: \"Scribblings,\" \"Things Nobody Will Read\"</h4>\n\n    ");
-  stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
+function program4(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n  <div class=\"row entry-list\">\n    <div class=\"medium-10 medium-push-1 large-9 large-push-0 columns\">\n      ");
+  stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </div>\n</div>");
+  data.buffer.push("\n    </div>\n  </div>\n");
+  return buffer;
+  }
+function program5(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n        ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "journal-item", options) : helperMissing.call(depth0, "partial", "journal-item", options))));
+  data.buffer.push("\n      ");
+  return buffer;
+  }
+
+  data.buffer.push("<div class=\"row content-section\">\n  <div class=\"small-9 medium-push-1 large-9 large-push-0 columns\">\n    <h1>Notes</h1>\n  </div>\n  <div class=\"small-2 large-1 small-end columns display-style\">\n    <span ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":toggle-button :icon-menu gridLayout::active")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleProp", "gridLayout", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push("></span><span ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":toggle-button :icon-grid gridLayout:active")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleProp", "gridLayout", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push("></span>\n  </div>\n</div>\n\n\n\n");
+  stack1 = helpers['if'].call(depth0, "gridLayout", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(4, program4, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   return buffer;
   
 });

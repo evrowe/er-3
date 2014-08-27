@@ -1,5 +1,5 @@
 <p>
   <span class="icon-tag"></span>tagged: {{#each tag in tags}}
-    <span class="pill">{{tag}}</span>
+    {{#link-to 'journal.tag' tag class="pill"}}{{tag}}{{/link-to}}
   {{/each}}
 </p>
