@@ -24,11 +24,26 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-uniE608:before {
+	content: "\e608";
+}
+.icon-uniE609:before {
+	content: "\e609";
+}
 .icon-uniE605:before {
 	content: "\e605";
 }
+.icon-pencil:before {
+	content: "\e606";
+}
+.icon-quill:before {
+	content: "\e607";
+}
 .icon-tag:before {
 	content: "\e603";
+}
+.icon-wrench:before {
+	content: "\e60a";
 }
 .icon-menu:before {
 	content: "\e601";
@@ -38,12 +53,6 @@
 }
 .icon-uniE600:before {
 	content: "\e600";
-}
-.icon-menu:before {
-	content: "\e601";
-}
-.icon-grid:before {
-	content: "\e602";
 }
 .icon-layout:before {
 	content: "\e604";
