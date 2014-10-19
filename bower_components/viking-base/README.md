@@ -1,22 +1,27 @@
-Viking Base is an opinionated package intended to provide a solid starting point for building web applications. The package consists of several key components: Ember.js, Handlebars.js, Foundation and gulp. Viking Base leans on Bower to manage dependencies and gulp to build while providing a simple scaffolding script.
+# Viking Base (5.1.1)
+
+Viking Base is an opinionated package intended to provide a solid starting point for building web applications. The package consists of several key components: Ember.js, Handlebars.js, Foundation and gulp. Viking Base leans on Bower to manage dependencies and gulp to build while providing a simple scaffolding script to get started.
 
 Currently, the package consists of:
 
-* Ember.js 1.6.1
-* Handlebars.js 1.1.2
-* Foundation 5.3.1
-* Modernizr 2.8.3
-* Respond 1.4.2
+* Ember.js 1.7.0
+* Foundation 5.4.2
+* jQuery 1.11.1 (for optional IE 8 support)
+* Respond 1.4.2 (for optional IE 8 support)
+* REM Unit Polyfill 1.3.2 (for optional IE 8 support)
 
 ## Getting Started
 
-Install the package via Bower:  
-`bower install viking-base`
+Initialize a Bower package:  
+`bower init`
 
-Run the scaffolding script:  
+Install the package via Bower:  
+`bower install viking-base -D`
+
+Run the install script:  
 `node bower_components/viking-base/install`
 
-Install the gulp build dependencies:  
+Install node.js packages:  
 `npm install`
 
 Try out the dev build:  
@@ -24,7 +29,7 @@ Try out the dev build:
 
 ## gulp Targets
 
-Viking Base includes three gulp build targets: dev, prod and default (which does not need to be specified). The goals of the gulp build are:
+Viking Base includes three main gulp build targets: dev, prod and default. Note: default does not need to be specified. The goals of the gulp build are:
 
 * Compile Sass
 * Compile Handlebars templates
@@ -47,7 +52,14 @@ The `dev` build is similar to the `prod` build except that it doesn’t minify o
 The `prod` build does the same thing as the `dev` build but also concatenates and minifies CSS and JavaScript resources. The `prod` build also hashes the output file names. To run the prod build:  
 `gulp prod`
 
+**update**  
+The `update` target is special in that it is intended to be used in front of other builds. For example: `gulp update dev`. This tells Viking Base that it should prune and install/update node.js and Bower packages. This shouldn't be necessary as part of a developer's everyday workflow unless dependency updates are expected frequently. This is a great addition, however, for a CI system.  
+`gulp update dev`  
+`gulp update prod`
+
 ## Extending Viking Base
+The method for extending Viking Base has changed slightly from version 3 to 4. In version 3, extending Viking Base meant updating `gulpfile.js` in your project root. This worked just fine; however, running the install script again would override your gulpfile and wipeout your customizations. In version 4, the gulpfile that ships with Viking Base now looks for a file called `viking-base.js` in your project root. The gulpfile expects `viking-base.js` to export a function that accepts 4 arguments. The 4th argument is a callback and must be called by your function. See below for a full example.
+
 The Viking Base node module provides a simple API for adding, removing or modifying gulp tasks. Every part of the gulp build is configurable. Here are the main configurable aspects of the build:
 
 * gulp tasks
@@ -56,47 +68,65 @@ The Viking Base node module provides a simple API for adding, removing or modify
 * Watch dependencies
 * Clean task options
 
-When gulpfiles.js requires the node module, the module exports a simple hash that can be manipulated any way you'd like. See `bower_components/viking-base/node_modules/viking-base/index.js` as a reference. This approach allows for Bower updates of Viking Base to bring in bug fixes and new features without writing over your build customizations.
+When `gulpfiles.js` requires the Viking Base module, the module exports a simple hash that can be manipulated any way you'd like. See `bower_components/viking-base/node_modules/viking-base/index.js` as a reference. This approach allows for Bower updates of Viking Base to bring in bug fixes and new features without writing over your build customizations.
 
-To customize the build, edit `gulpfile.js`. In the following example, we'll add a simple image task. You will see how a new task can be added that also becomes a dependency of a built-in task. 
+In the following example, we'll add a simple image task. You will see how a new task can be added that also becomes a dependency of a built-in task. The following changes go in `viking-base.js`, as described above. Note the function being exported.
 
 Example:
 
 ```javascript
-// Output updates
-vb.output.img = 'img/';
+module.exports = function( gulp, plugins, vb, cb ) {
 
-// Source updates
-vb.sources.img = 'img/**/*';
+  // Output updates
+  vb.output.img = 'img/';
 
-// Task updates
-vb.tasks.build.depends = [
-  'handlebars',
-  'img',
-  'js-doc',
-  'root'
-];
+  // Source updates
+  vb.sources.img = 'img/**/*';
 
-vb.tasks.handlebars.depends = ['img'];
+  // Task updates
+  vb.tasks.build.depends = [
+    'handlebars',
+    'img',
+    'js-doc',
+    'root'
+  ];
 
-vb.tasks.img = {
-  cb: function() {
+  vb.tasks.handlebars.depends = ['img'];
 
-    return gulp.src( this.sources.img )
-      .pipe( gulp.dest( this.output.publish + this.output.img ) );
-  }
+  vb.tasks.img = {
+    cb: function() {
+
+      return gulp.src( this.sources.img )
+        .pipe( gulp.dest( this.output.publish + this.output.img ) );
+    }
+  };
+
+  // Modify tasks as you need before calling vb.registerGulpTasks
+  vb.registerGulpTasks();
+
+  // Calling the callback kicks off the build
+  cb();
 };
-
-// Modify tasks as you need before calling vb.registerGulpTasks
-vb.registerGulpTasks();
 ```
 
-## Updating Viking Base
+## Changes from Version 4
 
-Updates to Viking Base may consist of simple dependency updates or gulp file updates. To update Viking base run:  
-`bower update`
+Viking Base used to include the Ember Start Kit Bower package since it included Ember, Handlebars and jQuery 1.x. One issue with this approach was that references in `index.html` to Ember had version numbers attached to them and the actual Bower packages for those libraries were not included. In version 5, Ember Starter Kit was removed in favor of more cleanly separated dependencies.
 
-**Note:** Though unlikely, it is possible that Viking Base might have node module dependency updates. You can compare `bower_components/viking-base/package.json` with your project's `package.json` if you update Viking Base to a new major or minor version. Patch version updates should not contain node module dependency updates.
+Another change introduced in version 5 was the REM Unit Polyfill dependency for IE 8 support. While version 4 saw the exclusion of some polyfills, it did not eliminate the conditionally loaded polyfills found in `index.html`. This is because these polyfills won't be loaded unless the user has IE 8, preventing bloated production output for all users. The REM Unit Polyfill helps ensure a decent experience with Foundation and IE 8.
+
+## Changes from Version 3
+
+Some JavaScript files have been removed from the scaffolding process. These files include:
+```
+js/main.js
+js/plugins.js
+js/pre-app.js
+```
+
+The reason these files have been removed from the project is because they made too many decisions for the devloper. Things like running Foundation on DOM ready, including some polyfills and turning off Ember debugging messages.
+
+Another big change comes with the way that IE 8 grid styles were included. Previously, these styles would be included in `style.scss` but that automatically introduces some output file bloat for users of any browser if you want to support IE 8. The grid styles are still included but now they are conditionally loaded within `index.html` and a `css` build target was added for gulp to make sure they make it to the publish folder.
 
 ## References
 * [node.js](http://nodejs.org/)
