@@ -30,6 +30,22 @@
  */
 App = Ember.Application.create();
 
+App.ApplicationController = Ember.Controller.extend({
+  // Properties
+  GAAccount: 'UA-3657515-3',
+
+  // Overrides
+  init: function() {
+
+    if ( window.location.hostname === 'localhost' ) {
+
+      console.log('updating google analytics account number');
+
+      this.set('GAAccount', 'XX-XXXXXXX-X');
+    }
+  }
+});
+
 /* Universal AJAX settings */
 $.ajaxSetup({
 
