@@ -21,7 +21,7 @@ function program1(depth0,data) {
 Ember.TEMPLATES["_entry-header"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing;
+  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
   
@@ -84,7 +84,11 @@ function program9(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<h2>\n  ");
+  data.buffer.push("<h2 ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': ("model.content:h1:")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">\n  ");
   stack1 = helpers['if'].call(depth0, "model.content", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n</h2>\n<div class=\"entry-meta\">\n  <p>\n  <span class=\"creation\">Published on <time>");
@@ -118,10 +122,7 @@ function program1(depth0,data) {
   data.buffer.push("</h2>\n      <hr>\n      ");
   stack1 = helpers._triageMustache.call(depth0, "created", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" | ");
-  stack1 = helpers._triageMustache.call(depth0, "category", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </div>\n    <div class=\"post-icon\">\n      <span class=\"icon-uniE600\"></span>\n    </div>\n  </article>\n");
+  data.buffer.push(" \n    </div>\n    <div class=\"post-icon\">\n      <span class=\"icon-uniE600\"></span>\n    </div>\n  </article>\n");
   return buffer;
   }
 
@@ -381,7 +382,7 @@ function program5(depth0,data) {
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleProp", "gridLayout", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
-  data.buffer.push("></span>\n  </div>\n</div>\n\n\n\n");
+  data.buffer.push("></span>\n  </div>\n  <hr>\n</div>\n\n");
   stack1 = helpers['if'].call(depth0, "gridLayout", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(4, program4, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   return buffer;
