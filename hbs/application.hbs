@@ -1,19 +1,17 @@
 <header>
   <nav class="row">
     <div class="large-12 columns">
-      {{#link-to "index" class="logo large-1 medium-1 small-3"}}<img src="img/er-mark-full.png" width="35">{{/link-to}}
-      {{!--#link-to 'work'}}Work{{/link-to}}
-      {{#link-to 'journal'}}Journal{{/link-to--}}
-      {{#link-to "about" class="large-1 medium-1 small-3"}}About{{/link-to}}
-      {{#link-to "contact" class="large-1 medium-1 small-3"}}Contact{{/link-to}}
+      {{#link-to "index" class="logo large-1 medium-1 small-2"}}<img src="img/er-mark-full.png" width="35">{{/link-to}}
+      {{!--#link-to 'work'}}Work{{/link-to--}}
+      {{#link-to "journal" class="large-1 medium-2 small-3"}}Journal{{/link-to}}
+      {{#link-to "about" class="large-1 medium-2 small-3"}}About{{/link-to}}
+      {{#link-to "contact" class="large-1 medium-2 small-3"}}Contact{{/link-to}}
     </div>
   </nav>
 </header>
 
-<section class="row primary">
-  <div class="large-12 columns">
-    {{outlet}}
-  </div>
+<section class="primary">
+  {{outlet}}
 </section>
 
 <footer>

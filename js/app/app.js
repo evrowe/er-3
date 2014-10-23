@@ -30,11 +30,45 @@
  */
 App = Ember.Application.create();
 
+/**
+ * The application controller
+ *
+ * @memberof App
+ * @instance
+ * @extends external:Ember.Controller
+ */
+App.ApplicationController = Ember.Controller.extend({
+  // Properties
+  /**
+   * Google analytics account number
+   *
+   * @memberof App.ApplicationController
+   * @instance
+   * @type {string}
+   */
+  GAAccount: 'UA-3657515-3',
+
+  // Overrides
+  /**
+   * The controller's init method
+   *
+   * @memberof App.ApplicationController
+   * @instance
+   */
+  init: function() {
+
+    // If the site is running on localhost (e.g. dev), disable google analytics
+    if ( window.location.hostname === 'localhost' ) {
+
+      this.set('GAAccount', 'XX-XXXXXXX-X');
+    }
+  }
+});
+
 /* Universal AJAX settings */
 $.ajaxSetup({
 
   contentType: 'application/json' // always expect responses in JSON format
-
 });
 
 /* Fixed nav on scroll (lives outside context of Ember app) */

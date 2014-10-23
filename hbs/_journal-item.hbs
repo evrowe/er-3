@@ -1,18 +1,13 @@
 <article>
-	<h2>
-		{{#if body}}
-			{{title}}
-		{{else}}
-			{{#link-to 'journal.entry' id}} {{title}} {{/link-to}}
-		{{/if}}
-	</h2>
-	<div class="meta">{{date}} at {{time}}</div>
-	
-	<div class="body">
-		{{#if body}}
-			{{{body}}}
-		{{else}}
-			{{{excerpt}}}
-		{{/if}}
-	</div>
+  <div class="large-12 entry-header">
+    {{partial "entry-header"}}
+  </div>
+  <div class="large-12 entry-excerpt">
+    {{{excerpt}}}
+  </div>
+  {{!--<div class="large-12 entry-taxonomy">
+    {{#if tags}}
+      {{partial "tags"}}
+    {{/if}}
+  </div>--}}
 </article>
