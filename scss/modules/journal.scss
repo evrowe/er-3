@@ -23,7 +23,9 @@
   }
 }
 
-.display-style
+.entry-list hr {
+  margin-top: 0;
+}
 
 .journal-grid-item {
   background-color: desaturate(darken($orange, 10%), 15%);
