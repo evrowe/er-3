@@ -15,7 +15,7 @@ function build() {
   vb.gulp = gulp;
   vb.plugins = plugins;
 
-  // Output updates
+    // Output updates
   vb.output.content = 'content';
   vb.output.fonts = 'fonts';
   vb.output.img = 'img';

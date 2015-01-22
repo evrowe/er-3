@@ -1,5 +1,4 @@
 .display-style {
-  float: right;
   line-height: 4rem;
 
   .toggle-button {
@@ -22,9 +21,9 @@
       background-color: $orange;
     }
   }
-
-
 }
+
+.display-style
 
 .journal-grid-item {
   background-color: desaturate(darken($orange, 10%), 15%);

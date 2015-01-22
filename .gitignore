@@ -1,11 +1,3 @@
-# Build output #
-################
-.sass-cache/
-intermediate/
-publish/
-target/
-.metadata
-
 # OS generated files #
 ######################
 .DS_Store
@@ -22,13 +14,17 @@ ehthumbs.db
 Thumbs.db
 *.swp
 
-# Bower manifest #
-##################
-.bower.json
+# Build output #
+################
+publish/
 
 # JSDoc #
 #########
 docs/
+
+# Bower packages #
+##################
+bower_components/
 
 # node.js modules #
 ###################
