@@ -38,8 +38,6 @@ App.Entries.reopenClass({
 
         }
 
-        console.info(options);
-
         // filter items by category
         if ( options && options.category ) {
 
