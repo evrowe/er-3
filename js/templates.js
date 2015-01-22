@@ -295,7 +295,7 @@ function program7(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n</section>\n\n<footer>\n  <div class=\"row\">\n    <div class=\"large-3 small-8 small-push-2 medium-4 medium-push-0 columns\">\n      <img src=\"img/er-large.png\">\n    </div>\n    <div class=\"large-4 medium-6 small-8 medium-pull-0 small-pull-2 columns\">\n      <p>Built on <a href=\"http://www.emberjs.com\" target=\"_blank\">Ember.js</a> and constructed mercilessly from <a href=\"https://github.com/jneurock/viking-base\" target=\"_blank\">Viking Base</a>; Source available on <a href=\"http://www.github.com/evrowe/er-3\" target=\"_blank\">Github</a></p>\n      <p>Hosted on <a href=\"http://www.mediatemple.com\" target=\"_blank\">MediaTemple (gs)</a> with continuous integration via <a href=\"http://www.codeship.com\" target=\"_blank\">Codeship</a></p>\n      <p>&copy;2014 Evan Rowe</p>\n    </div>\n  </div>\n</footer>\n");
+  data.buffer.push("\n</section>\n\n<footer>\n  <div class=\"row\">\n    <div class=\"large-3 small-8 small-offset-2 medium-4 medium-offset-0 columns\">\n      <img src=\"img/er-large.png\">\n    </div>\n    <div class=\"large-4 medium-6 small-8 medium-pull-0 small-pull-2 columns\">\n      <p>Built on <a href=\"http://www.emberjs.com\" target=\"_blank\">Ember.js</a> and constructed mercilessly from <a href=\"https://github.com/jneurock/viking-base\" target=\"_blank\">Viking Base</a>; Source available on <a href=\"http://www.github.com/evrowe/er-3\" target=\"_blank\">Github</a></p>\n      <p>Hosted on <a href=\"http://www.mediatemple.com\" target=\"_blank\">MediaTemple (gs)</a> with continuous integration via <a href=\"http://www.codeship.com\" target=\"_blank\">Codeship</a></p>\n      <p>&copy;2014 Evan Rowe</p>\n    </div>\n  </div>\n</footer>\n");
   return buffer;
   
 });
@@ -342,14 +342,14 @@ function program1(depth0,data) {
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   data.buffer.push(escapeExpression(helpers.bindAttr.call(depth0, {hash:{
-    'class': ("headerImage:image-header :entry-header :medium-8 :medium-push-2 :columns")
+    'class': ("headerImage:image-header :entry-header :medium-8 :medium-offset-2 :columns")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push(">\n      ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || (depth0 && depth0.partial)),stack1 ? stack1.call(depth0, "entry-header", options) : helperMissing.call(depth0, "partial", "entry-header", options))));
-  data.buffer.push("\n    </div>\n  </div>\n\n  <div class=\"row entry-content\">\n    <div class=\"medium-8 medium-push-2 columns\">\n\n      \n\n      ");
+  data.buffer.push("\n    </div>\n  </div>\n\n  <div class=\"row entry-content\">\n    <div class=\"medium-8 medium-offset-2 columns\">\n\n      \n\n      ");
   hashContexts = {'unescaped': depth0};
   hashTypes = {'unescaped': "STRING"};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.content", {hash:{
@@ -421,35 +421,35 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts;
-  data.buffer.push("\n  <div class=\"row entry-grid\">\n    ");
+  data.buffer.push("\n    ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </div>\n");
+  data.buffer.push("\n  ");
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts, options;
-  data.buffer.push("\n    <div class=\"small-12 medium-6 large-4 columns\">\n      ");
+  data.buffer.push("\n      <div class=\"small-12 medium-6 large-4 columns\">\n        ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || (depth0 && depth0.partial)),stack1 ? stack1.call(depth0, "journal-grid-item", options) : helperMissing.call(depth0, "partial", "journal-grid-item", options))));
-  data.buffer.push("\n    </div>\n    ");
+  data.buffer.push("\n      </div>\n    ");
   return buffer;
   }
 
 function program4(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts;
-  data.buffer.push("\n  <div class=\"row entry-list\">\n    <div class=\"medium-10 medium-push-1 large-9 large-push-0 columns\">\n      ");
+  data.buffer.push("\n    <div class=\"medium-10 medium-offset-1 large-9 large-offset-0 columns\">\n      ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </div>\n  </div>\n");
+  data.buffer.push("\n    </div>\n  ");
   return buffer;
   }
 function program5(depth0,data) {
@@ -464,7 +464,7 @@ function program5(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<div class=\"row content-section\">\n  <div class=\"small-9 medium-push-1 large-9 large-push-0 columns\">\n    <h1>Entries</h1>\n  </div>\n  <div class=\"small-2 large-1 small-end columns display-style\">\n    <span ");
+  data.buffer.push("<div class=\"row content-section\">\n  <div class=\"small-9 medium-offset-1 large-9 large-offset-0 columns\">\n    <h1>Entries</h1>\n  </div>\n  <div class=\"small-2 large-1 large-offset-2 end columns display-style\">\n    <span ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
@@ -486,11 +486,19 @@ function program5(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleProp", "gridLayout", {hash:{},contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("></span>\n  </div>\n  <hr>\n</div>\n\n");
+  data.buffer.push("></span>\n  </div>\n</div>\n\n\n<div ");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': ("gridLayout:entry-grid:entry-list :row")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push(">\n  <hr>\n  ");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "gridLayout", {hash:{},inverse:self.program(4, program4, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n</div>");
   return buffer;
   
 });
