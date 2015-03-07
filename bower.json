@@ -1,0 +1,21 @@
+{
+  "name": "er-3",
+  "version": "1.1",
+  "homepage": "https://github.com/evrowe/er-3",
+  "authors": [
+    "Evan Rowe <er@evan-rowe.com>"
+  ],
+  "description": "evan rowe's personal website",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "viking-base": "~7.0.0"
+  }
+}
