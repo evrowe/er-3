@@ -1316,7 +1316,7 @@ Ember.TEMPLATES["contact"] = Ember.HTMLBars.template((function() {
       dom.appendChild(el1, el2);
       var el2 = dom.createElement("p");
       var el3 = dom.createElement("a");
-      dom.setAttribute(el3,"href","content/evan-rowe-resume-2012.pdf");
+      dom.setAttribute(el3,"href","content/evan-rowe-resume-web.pdf");
       var el4 = dom.createTextNode("My Resume");
       dom.appendChild(el3, el4);
       dom.appendChild(el2, el3);
