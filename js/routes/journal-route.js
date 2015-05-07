@@ -1,23 +1,23 @@
+/* globals App, Ember */
 /**
- * An Ember route for the site's homepage
+ * An Ember route for the journal entries list
  *
  * @memberof App
  * @constructor
  * @extends external:Ember.Route
  */
-App.IndexRoute = Ember.Route.extend({
+App.JournalRoute = Ember.Route.extend({
+
   // Overrides
   /**
    * Specify the route's model
    *
-   * @memberof App.IndexRoute
+   * @memberof App.JournalIndexRoute
    * @instance
    * @returns {Array.<EntryItem>}
    */
   model: function() {
 
-    return App.Work.findAll();
-
+    return App.Entries.findAll();
   }
-
 });

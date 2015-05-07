@@ -1,0 +1,18 @@
+<div class="row content-section">
+  <div class="small-9 medium-offset-1 large-9 large-offset-0 columns">
+    <h1>Entries</h1>
+  </div>
+  <div class="small-2 large-1 large-offset-2 end columns display-style">
+    <span class="{{if controller.gridLayout '' 'active'}} toggle-button icon-menu" {{action "toggleProp" "gridLayout"}}></span><span class="{{if controller.gridLayout 'active'}} toggle-button icon-grid" {{action "toggleProp" "gridLayout"}}></span>
+  </div>
+</div>
+
+
+<div class="{{if controller.gridLayout 'entry-grid' 'entry-list'}} row">
+  <hr>
+  {{#if controller.gridLayout}}
+    {{entry-list componentType="journal-grid-item" posts=model}}
+  {{else}}
+    {{entry-list componentType="journal-item" classNames="medium-10 medium-offset-1 large-9 large-offset-0 columns" posts=model}}
+  {{/if}}
+</div>

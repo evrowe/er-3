@@ -1,12 +1,12 @@
-<article {{bindAttr class="headerImage::content-section :full-article"}}>
-  {{#if headerImage}}
-  <div class="hero-image">
-    <img {{bind-attr src=headerImage}} />
-  </div>
+<article class="{{if model.headerImage '' 'content-section'}} full-article">
+  {{#if model.headerImage}}
+    <div class="hero-image">
+      <img src="{{model.headerImage}}" />
+    </div>
   {{/if}}
   <div class="row">
-    <div {{bindAttr class="headerImage:image-header :entry-header :medium-8 :medium-offset-2 :columns"}}>
-      {{partial "entry-header"}}
+    <div class="{{if model.headerImage 'image-header'}} entry-header medium-9 medium-offset-2 columns">
+      {{entry-header post=model}}
     </div>
   </div>
 

@@ -88,3 +88,26 @@ ol li ul,
 ol li ul {
   margin-left: 1.4rem;
 }
+
+code {
+  border-radius: 3px;
+  //color: lighten(red, 20%);
+  color: $orange;
+}
+
+pre {
+  background-color: $code-color;
+  border-radius: 3px;
+  color: $code-background-color;
+  font-family: $code-font-family;
+  font-weight: $code-font-weight;
+  margin-bottom: 1.5rem;
+  padding: .5rem;
+
+  code {
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0;
+    color: $code-background-color;
+  }
+}

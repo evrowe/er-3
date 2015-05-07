@@ -1,3 +1,4 @@
+/* globals App, Ember */
 /**
  * The work items model
  *
@@ -16,7 +17,7 @@ App.Work.reopenClass({
    * @param {object} options An object containing optional filter parameters
    * @returns {Array.<Object>}
    */
-  findAll: function(options) {
+  findAll: function() {
 
     return $.ajax('content/work.json').then(
 
@@ -34,7 +35,6 @@ App.Work.reopenClass({
         return items;*/
 
         return data;
-
       },
 
       // Fail
@@ -42,11 +42,7 @@ App.Work.reopenClass({
 
         console.log(data);
         console.error('App.Work.findAll: AJAX error');
-
       }
-
     );
-
   }
-
 });

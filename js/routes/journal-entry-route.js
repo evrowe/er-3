@@ -1,3 +1,4 @@
+/* globals App, Ember */
 /**
  * An Ember route for a single journal entry
  *
@@ -18,19 +19,5 @@ App.JournalEntryRoute = Ember.Route.extend({
   model: function(params) {
 
     return App.Entry.find(params.entry_id);
-
-  },
-
-  /**
-   * Render the journal entry template
-   *
-   * @memberof App.JournalEntryRoute
-   * @instance
-   */
-  renderTemplate: function() {
-
-    this.render('entry');
-
   }
-
 });

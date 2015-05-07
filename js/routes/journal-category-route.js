@@ -1,3 +1,4 @@
+/* globals App, Ember */
 /**
  * An Ember route for the journal entries list
  *
@@ -5,34 +6,20 @@
  * @constructor
  * @extends external:Ember.Route
  */
-App.JournalTagRoute = Ember.Route.extend({
+App.JournalCategoryRoute = Ember.Route.extend({
 
   // Overrides
   /**
    * Specify the route's model
    *
-   * @memberof App.JournalTagRoute
+   * @memberof App.JournalCategoryRoute
    * @instance
    * @returns {Array.<EntryItem>}
    */
   model: function(params) {
 
     return App.Entries.findAll({
-      tag: params.tag_id
+      category: params.category_id
     });
-
-  },
-
-  /**
-   * Render the journal index template
-   *
-   * @memberof App.JournalTagRoute
-   * @instance
-   */
-  renderTemplate: function() {
-
-    this.render('journalIndex');
-
   }
-
 });

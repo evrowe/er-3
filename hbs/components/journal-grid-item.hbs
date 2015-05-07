@@ -1,12 +1,12 @@
-{{#link-to 'journal.entry' id}}
+{{#link-to 'journal.entry' post.id}}
   <article class="journal-grid-item">
     <div class="post-image">
-      <img {{bind-attr src=headerImage}} />
+      <img src="{{post.headerImage}}" />
     </div>
     <div class="post-info">
-      <h2>{{title}}</h2>
+      <h2>{{post.title}}</h2>
       <hr>
-      {{created}} {{!--#if category}}| {{category}}{{/if--}}
+      {{post.created}} {{!--#if category}}| {{category}}{{/if--}}
     </div>
     <div class="post-icon">
       <span class="icon-uniE600"></span>

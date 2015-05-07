@@ -7,7 +7,7 @@ App.Router.map(function() {
   this.resource('journal', function() {
 
       this.route('entry', {
-        path: '/:entry_id'
+        path: '/entry/:entry_id'
       });
 
       this.route('category', {

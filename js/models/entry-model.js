@@ -1,3 +1,4 @@
+/* globals App, Ember */
 /**
  * The entry model
  *
@@ -29,31 +30,24 @@ App.Entry.reopenClass({
             //App.setPageTitle(data.title);
 
             return data;
-
           },
 
           // Fail
-          function (data) {
+          function () {
 
             console.error('App.Entry.find: AJAX error');
-
           }
-
         );
 
       } else {
 
         throw 'Entry ID missing';
-
       }
 
     } catch(e) {
 
       console.error('App.Entry.find:');
       console.error(e);
-
     }
-
   }
-
 });

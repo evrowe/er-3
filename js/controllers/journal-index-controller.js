@@ -1,3 +1,4 @@
+/* globals App, Ember */
 /**
  * The controller for the journal route (handles journal index, category view and tag view)
  *
@@ -17,14 +18,17 @@ App.JournalIndexController = Ember.ArrayController.extend({
   gridLayout: false,
 
   // Actions
-
   actions: {
-
+    /**
+     * Pass through action for the controller's toggleProperty method
+     *
+     * @memberof App.JournalController
+     * @instance
+     * @param {string} property The property on the controller to toggle
+     */
     toggleProp: function(property) {
 
-      this.toggleProperty(property)
-
+      this.toggleProperty(property);
     }
-
   }
 });

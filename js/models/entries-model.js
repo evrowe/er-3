@@ -1,3 +1,4 @@
+/* globals App, Ember */
 /**
  * The journal model
  *
@@ -30,39 +31,33 @@ App.Entries.reopenClass({
             entriesPerPage = 5, // TODO: tie this to an app property
             startPostIndex = 0;*/
 
-        var entries = [];
+        var entries = [],
+            i = 0;
 
         for (i = 0; i < data.length; i++) {
 
           entries.push(data[i]);
-
         }
 
         // filter items by category
         if ( options && options.category ) {
 
           entries = entries.filterBy('category', options.category);
-
         }
 
         // filter items by tag
         if ( options && options.tag ) {
 
-          entries = entries.filter(function(item, index, self) {
+          entries = entries.filter(function(item) {
 
             if ( item.tags.indexOf(options.tag) !== -1 ) {
 
-              return true
-
+              return true;
             }
-
-          })
-
+          });
         }
 
-
         return entries;
-
       },
 
       // Fail
@@ -70,11 +65,7 @@ App.Entries.reopenClass({
 
         console.log(data);
         console.error('App.Journal.findAll: AJAX error');
-
       }
-
     );
-
   }
-
 });
