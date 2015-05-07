@@ -109,7 +109,7 @@ Ember is not an abstraction language; it is a robust framework with an API built
 
 This is, in my mind, a poor argument. Some people *absolutely would* skip over JavaScript straight to CoffeeScript. I see it all the time with back-end developers looking to jump into JavaScript, either to accomplish something quickly or to not have to deal with learning all of JavaScript's ins and outs. I will be one of the first to admit to (and agree with) the fact that JavaScript has many quirks and idiosyncracies that can trip you up if you're not careful. That doesn't mean you shouldn't be aware of them, though; knowing what can bite you if you're not careful can save you loads of headache down the road, and it can come in very handy when troubleshooting your code, or somebody else's!
 
-Furthermore, this been happening with jQuery for a very long time already; jQuery is essentially a gateway into JavaScript for a lot of web developers. Hell, that's how I got started, and while it was a nice way to get going quickly, the knowledge gap that created for me took a good while to overcome. Note that jQuery still uses standard JavaScript syntax, so at least it's teaching you to write your code correctly(ish) even if you don't know what's actually happening under the hood!
+Furthermore, this has been happening with jQuery for a very long time already; jQuery is essentially a gateway into JavaScript for a lot of web developers. Hell, that's how I got started, and while it was a nice way to get going quickly, the knowledge gap that created for me took a good while to overcome. Note that jQuery still uses standard JavaScript syntax, so at least it's teaching you to write your code correctly(ish) even if you don't know what's actually happening under the hood!
 
 **"Javascript is just an abstraction of machine code that has to go through it's own compiler!"**
 
@@ -117,9 +117,9 @@ Trolls are really obnoxious, aren't they?
 
 ## Lesser of Two Evils
 
-JavaScript gets a ton of flak in the larger development community, sometimes deservedly so. It's full of idiosyncracies you won't find in most "proper" languages, and the fact that so much work is going on in the JS community to make it behave less like a scripting language is very telling. That being said, I still think it can be extremely powerful, and the past few years have demonstrated that not only is is immensely capable, but that it's potential is growing rapidly. All of that capability doesn't just come for free, though. The only way to manage those idiosyncracies gracefully is to gain experience with the language as it was intended.
+JavaScript gets a ton of flak in the larger development community, sometimes deservedly so. It's full of idiosyncracies you won't find in most "proper" languages, and the fact that so much work is going on in the JS community to make it behave less like a scripting language is very telling. That being said, I still think it can be extremely powerful, and the past few years have demonstrated that not only is it immensely capable, but that it's potential is growing rapidly. All of that capability doesn't just come for free, though. The only way to manage those idiosyncracies gracefully is to gain experience with the language as it was intended.
 
-Then again, CoffeeScript has been around since 2010 and is only growing in popularity. I cloud just be a grump who's ignoring something that's very cool and potentially extremely useful. Although, maybe there's a good reason modern framework documentation isn't written in CoffeeScript. What do I know?
+Then again, CoffeeScript has been around since 2010 and is only growing in popularity. I could just be a grump who's ignoring something that's very cool and potentially extremely useful. Although, maybe there's a good reason modern framework documentation isn't written in CoffeeScript. What do I know?
 
 ## FINALE
 
