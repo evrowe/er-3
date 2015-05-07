@@ -91,11 +91,11 @@ Secondly, again, we see the inverse logical condition pattern, which is rapildy 
       return print(winner, runners);
     };
 
-CoffeeScript provides a feature called "splats", represented by the ellipsis (`&hellip;`), which allow for denotation of optional arguments which may not always be present when a function is called. This is a nice convenience if you're used to dealing with the headache of reassigning argument values, but it would prevent a new developer from properly understanding how to handle this situation in JavaScript, and the importance of writing these checks in your code.
+CoffeeScript provides a feature called "splats", represented by the ellipsis (`…`), which allow for denotation of optional arguments which may not always be present when a function is called. This is a nice convenience if you're used to dealing with the headache of reassigning argument values, but it would prevent a new developer from properly understanding how to handle this situation in JavaScript, and the importance of writing these checks in your code.
 
 #### Example 4: Scoping Obfuscation
 
-Throughout the CoffeeScript examples, variables are *never* explicitly declared. Not once. With CoffeeScript, you are allowed to throw variables around at leisure, trusting the compiler to handle declaring them for you when you're done. Again, this is nice, but what happens when our hypothetical CoffeeScript-only have to make the move back to JavaScript? Will they understand that they need to explicitly declare their variables? Will they further understand the difference between `var foo = 'bar';` inside and outside of a block? Will they even know they should use `var` inside of blocks when reusing variable names if they want those variables to be discrete?
+Throughout the CoffeeScript examples, variables are *never* explicitly declared. Not once. With CoffeeScript, you are allowed to throw variables around at leisure, trusting the compiler to handle declaring them for you when you're done. Again, this is nice, but what happens when our hypothetical CoffeeScript-only dev has to make the move back to JavaScript? Will they understand that they need to explicitly declare their variables? Will they further understand the difference between `var foo = 'bar';` inside and outside of a block? Will they even know they should use `var` inside of blocks when reusing variable names if they want those variables to be discrete?
 
 ### Not the Same as a Framework
 
@@ -107,7 +107,7 @@ Ember is not an abstraction language; it is a robust framework with an API built
 
 **"Nobody would actually learn CoffeeScript without learning JavaScript!"**
 
-These is, in my mind, a poor argument. Some people *absolutely would* skip over JavaScript straight to CoffeeScript. I see it all the time with back-end developers looking to jump into JavaScript, either to accomplish something quickly or to not have to deal with learning all of JavaScript's ins and outs. I will be one of the first to admit to (and agree with) the fact that JavaScript has many quirks and idiosyncracies that can trip you up if you're not careful. That doesn't mean you shouldn't be aware of them, though; knowing what can bite you if you're not careful can save you loads of headache down the road, and it can come in very handy when troubleshooting your code, or somebody else's!
+This is, in my mind, a poor argument. Some people *absolutely would* skip over JavaScript straight to CoffeeScript. I see it all the time with back-end developers looking to jump into JavaScript, either to accomplish something quickly or to not have to deal with learning all of JavaScript's ins and outs. I will be one of the first to admit to (and agree with) the fact that JavaScript has many quirks and idiosyncracies that can trip you up if you're not careful. That doesn't mean you shouldn't be aware of them, though; knowing what can bite you if you're not careful can save you loads of headache down the road, and it can come in very handy when troubleshooting your code, or somebody else's!
 
 Furthermore, this been happening with jQuery for a very long time already; jQuery is essentially a gateway into JavaScript for a lot of web developers. Hell, that's how I got started, and while it was a nice way to get going quickly, the knowledge gap that created for me took a good while to overcome. Note that jQuery still uses standard JavaScript syntax, so at least it's teaching you to write your code correctly(ish) even if you don't know what's actually happening under the hood!
 
