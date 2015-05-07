@@ -4,7 +4,7 @@ id: hazards-of-javascript-preprocessors
 category: development, javascript
 excerpt: Tersely formatted pseudolanguages are convenient, but they can be potentially harmful to the ecosystem at large.
 created: 05/7/2015
-createdTime: 2:53pm
+createdTime: 3:58pm
 updated: null
 updatedTime: null
 tags:
